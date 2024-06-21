@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Fetch API Example</title>
+</head>
+<body>
+ <button id="fetchButton">Fetch Data</button>
+ <script>
+ document.getElementById('fetchButton').addEventListener('click', () => {
+ fetch('http://localhost:8080/test2')
+	 .then(response => response.json())
+	 .then(data => {
+	 	console.log(data);
+	 })
+ .catch(error => {
+	 });
+ })
+ </script>
+</body>
+</html>

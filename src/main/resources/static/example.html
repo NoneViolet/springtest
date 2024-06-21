@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Fetch API Example</title>
+</head>
+<body>
+ <button id="fetchButton">Fetch Data</button>
+ <p>Fetched Data: <span id="dataDisplay"></span></p>
+ <script>
+ document.getElementById('fetchButton').addEventListener('click', () => {
+ fetch('http://localhost:8080/test')
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById('dataDisplay').textContent = data;
+ })
+ .catch(error => {
+ console.error('Error:', error);
+ });
+ });
+ </script>
+</body>
+</html>
